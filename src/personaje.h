@@ -35,7 +35,13 @@ public:
     void setHp(int hp);
     void setataque(int ataque);
     void setdefensa(int defensa);
+    void setdefiende(bool valor);
     void setKi(int ki);
+    void setKiEspecial(int ki_especial);
+    void setNataque(const std::string& nataque);
+    void setNataqueEspecial(const std::string& nataque_especial);
+    virtual void atacarNormal(Personaje& objetivo);
+    virtual void atacarEspecial(Personaje& objetivo);
     bool vive() const;
     void mostrar() const;
 };
