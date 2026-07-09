@@ -1,9 +1,9 @@
 #include "personaje.h"
 #include <iostream>
-#include <algorithm>
 
+// Implementación de la clase Personaje, (constructor, destructor, getters, setters y métodos de ataque)
 Personaje::Personaje(const std::string& nombreInicial, int hpmaxInicial, int kimaxInicial, int ataqueInicial, int defensaInicial) {
-    nombre = nombreInicial;
+    nombre = nombreInicial;             //(nombre, hpmax, kimax, ataque, defensa) 
 
     if (hpmaxInicial < 1) {
         hpmax = 1;

@@ -1,11 +1,11 @@
-#ifndef PROFE_H
-#define PROFE_H
+#ifndef FRANÇOIS_H
+#define FRANÇOIS_H
 
 #include "personaje.h"
 
-class Profe : public Personaje {
+class François : public Personaje {
 public:
-    Profe(const std::string& nombre);
+    François(const std::string& nombre);
     void atacarNormal(Personaje& objetivo) ;
     void atacarEspecial(Personaje& objetivo);
 };

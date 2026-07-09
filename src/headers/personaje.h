@@ -1,5 +1,7 @@
+#ifndef PERSONAJE_H
+#define PERSONAJE_H
+
 #include <iostream>
-#include <string>
 
 class Personaje {
 protected:
@@ -59,3 +61,5 @@ void Personaje::mostrar() const {
         std::cout << "Estado: Normal" << std::endl;
     }
 }
+
+#endif

@@ -3,9 +3,9 @@
 
 #include "personaje.h"
 
-class Cesar : public Personaje {
+class Sexitar : public Personaje {
 public:
-    Cesar(const std::string& nombre);
+    Sexitar(const std::string& nombre);
     void atacarEspecial(Personaje& objetivo) ;
 };
 

@@ -1,6 +1,7 @@
 #include "leo1.h"
 #include <iostream>
 
+//Constructor de la clase Leo1, que hereda de Personaje y establece los atributos específicos del personaje.
 Leo1::Leo1(const std::string& nombreInicial) : Personaje(nombreInicial, 90, 110, 20, 8) {
     nataque = "G";
     nataque_especial = "R";

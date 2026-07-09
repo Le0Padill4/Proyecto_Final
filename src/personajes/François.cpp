@@ -1,13 +1,14 @@
-#include "profe.h"
+#include "François.h"
 #include <iostream>
-
-Profe::Profe(const std::string& nombreInicial) : Personaje(nombreInicial, 150, 150, 22, 16) {
-    nataque = "Polimorfismo";
+// Constructor de la clase François, que hereda de Personaje (nombre, hpmax, kimax, ataque, defensa)
+François::François(const std::string& nombreInicial) : Personaje(nombreInicial, 150, 150, 22, 16) {
+    nataque = "Deberes";
     nataque_especial = "Herencia";
     ki_especial = 40;
 }
 
-void Profe::atacarNormal(Personaje& objetivo) {
+// Implementación de los métodos de ataque normal y especial para el Master
+void François::atacarNormal(Personaje& objetivo) {
     int dano = ataque - (objetivo.getDefensa() / 2);
     if (dano < 1) {
         dano = 1;
@@ -19,8 +20,8 @@ void Profe::atacarNormal(Personaje& objetivo) {
                << " contra " << objetivo.getNombre() << " (" << dano << " de dano)." << std::endl;
     objetivo.setHp(objetivo.getHp() - dano);
 }
-
-void Profe::atacarEspecial(Personaje& objetivo) {
+// Implementación del método de ataque especial para el Master
+void François::atacarEspecial(Personaje& objetivo) {
     if (ki < ki_especial) {
         std::cout << nombre << " no tiene suficiente Ki para " << nataque_especial << "." << std::endl;
         return;
