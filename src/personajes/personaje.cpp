@@ -125,6 +125,20 @@ void Personaje::setdefiende(bool valor) {
     defiende = valor;
 }
 
+void Personaje::setKiEspecial(int nuevoKiEspecial) {
+    if (nuevoKiEspecial >= 0) {
+        ki_especial = nuevoKiEspecial;
+    }
+}
+
+void Personaje::setNataque(const std::string& nuevoNataque) {
+    nataque = nuevoNataque;
+}
+
+void Personaje::setNataqueEspecial(const std::string& nuevoNataqueEspecial) {
+    nataque_especial = nuevoNataqueEspecial;
+}
+
 bool Personaje::vive() const {
     return hp > 0;
 }

@@ -3,8 +3,8 @@
 
 //Constructor de la clase Leo2, que hereda de Personaje y establece los atributos específicos del personaje.
 Leo2::Leo2(const std::string& nombreInicial) : Personaje(nombreInicial, 95, 100, 17, 11) {
-    nataque = "P";
-    nataque_especial = "O";
+    nataque = "Llegar tarde";
+    nataque_especial = "Llegar temprano";
     ki_especial = 30;
 }
 

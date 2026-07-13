@@ -2,6 +2,7 @@
 #define PERSONAJE_H
 
 #include <iostream>
+#include <string>
 
 class Personaje {
 protected:
@@ -47,19 +48,5 @@ public:
     bool vive() const;
     void mostrar() const;
 };
-
-void Personaje::mostrar() const {
-    std::cout << "Nombre: " << getNombre() << std::endl;
-    std::cout << "Vida: " << getHp() << "/" << getHpMax() << std::endl;
-    std::cout << "Ki: " << getKi() << "/" << getKiMax() << std::endl;
-    std::cout << "Ataque: " << getAtaque() << std::endl;
-    std::cout << "Defensa: " << getDefensa() << std::endl;
-
-    if (getDefiende()) {
-        std::cout << "Estado: Defendiendo" << std::endl;
-    } else {
-        std::cout << "Estado: Normal" << std::endl;
-    }
-}
 
 #endif
