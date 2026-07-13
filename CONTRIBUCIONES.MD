@@ -12,3 +12,6 @@
 - Creación e integración de personajes derivados.
 - Implementación de ataques especiales y atributos personalizados.
 - Aporte principal en la rama de exposición y desarrollo de personajes.
+
+# Inteligencia Artificial
+- Esta parte fue desarrollada con IA: generación de recursos visuales en pixel art y diseño de las interfaces de selección y combate.

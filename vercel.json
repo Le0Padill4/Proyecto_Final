@@ -1,0 +1,50 @@
+{
+    "$schema": "https://openapi.vercel.sh/vercel.json",
+    "outputDirectory": "public",
+    "cleanUrls": true,
+    "rewrites": [
+        {
+            "source": "/api/estado",
+            "destination": "/api/game?route=estado"
+        },
+        {
+            "source": "/api/combate/estado",
+            "destination": "/api/game?route=combate/estado"
+        },
+        {
+            "source": "/api/seleccion",
+            "destination": "/api/game?route=seleccion"
+        },
+        {
+            "source": "/api/combate/accion",
+            "destination": "/api/game?route=combate/accion"
+        },
+        {
+            "source": "/api/combate/impacto",
+            "destination": "/api/game?route=combate/impacto"
+        },
+        {
+            "source": "/api/combate/reiniciar",
+            "destination": "/api/game?route=combate/reiniciar"
+        },
+        {
+            "source": "/api/seleccion/reiniciar",
+            "destination": "/api/game?route=seleccion/reiniciar"
+        }
+    ],
+    "headers": [
+        {
+            "source": "/(.*)",
+            "headers": [
+                {
+                    "key": "X-Content-Type-Options",
+                    "value": "nosniff"
+                },
+                {
+                    "key": "Referrer-Policy",
+                    "value": "strict-origin-when-cross-origin"
+                }
+            ]
+        }
+    ]
+}

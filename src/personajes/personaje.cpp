@@ -139,6 +139,12 @@ void Personaje::setNataqueEspecial(const std::string& nuevoNataqueEspecial) {
     nataque_especial = nuevoNataqueEspecial;
 }
 
+void Personaje::reiniciarCombate() {
+    hp = hpmax;
+    ki = 0;
+    defiende = false;
+}
+
 bool Personaje::vive() const {
     return hp > 0;
 }

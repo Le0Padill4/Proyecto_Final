@@ -4,6 +4,7 @@
 #include "leo1.h"
 #include "leo2.h"
 #include "François.h"
+#include "seleccion_personajes.h"
 #include <iostream>
 #include <limits>
 
@@ -64,7 +65,7 @@ void ejecutarTurno(Personaje& atacante, Personaje& defensor) {
     }
 }
 
-int main() {
+int main(int argc, char* argv[]) {
     Sexitar   pSexitar("Sexitar");
     Leo1    pLeo1("Leo1");
     Leo2    pLeo2("Leo2");
@@ -72,21 +73,37 @@ int main() {
 
     Personaje* equipo[4];
     equipo[0] = &pSexitar;
-    equipo[1] = &pLeo1;
+    equipo[1] = &pFrançois;
     equipo[2] = &pLeo2;
-    equipo[3] = &pFrançois;
+    equipo[3] = &pLeo1;
 
-    mostrarPersonajes(equipo, 4);
+    // Esta selección visual fue desarrollada con apoyo de IA y conserva
+    // la selección por consola como alternativa si la interfaz no puede abrirse.
+    const SeleccionJugadores seleccion = seleccionarPersonajesWeb(
+        equipo,
+        4,
+        argc > 0 ? argv[0] : ""
+    );
 
-    std::cout << "Jugador 1, selecciona tu personaje." << std::endl;
-    int opcionJugador1 = leerOpcion(1, 4);
+    int opcionJugador1;
+    int opcionJugador2;
+    if (seleccion.completada) {
+        opcionJugador1 = seleccion.jugador1 + 1;
+        opcionJugador2 = seleccion.jugador2 + 1;
+        std::cout << "Seleccion confirmada desde la interfaz." << std::endl;
+    } else {
+        mostrarPersonajes(equipo, 4);
 
-    std::cout << "Jugador 2, selecciona tu personaje." << std::endl;
-    int opcionJugador2 = leerOpcion(1, 4);
+        std::cout << "Jugador 1, selecciona tu personaje." << std::endl;
+        opcionJugador1 = leerOpcion(1, 4);
 
-    while (opcionJugador2 == opcionJugador1) {
-        std::cout << "Ese personaje ya fue elegido. Selecciona otro." << std::endl;
+        std::cout << "Jugador 2, selecciona tu personaje." << std::endl;
         opcionJugador2 = leerOpcion(1, 4);
+
+        while (opcionJugador2 == opcionJugador1) {
+            std::cout << "Ese personaje ya fue elegido. Selecciona otro." << std::endl;
+            opcionJugador2 = leerOpcion(1, 4);
+        }
     }
 
     Personaje* jugador1 = equipo[opcionJugador1 - 1];

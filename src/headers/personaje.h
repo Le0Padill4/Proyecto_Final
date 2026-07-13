@@ -45,6 +45,7 @@ public:
     void setNataqueEspecial(const std::string& nataque_especial);
     virtual void atacarNormal(Personaje& objetivo);
     virtual void atacarEspecial(Personaje& objetivo);
+    void reiniciarCombate();
     bool vive() const;
     void mostrar() const;
 };

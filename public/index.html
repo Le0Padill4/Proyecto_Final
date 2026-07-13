@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#070b17">
+    <title>Proyecto Final · Arena de combate</title>
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/battle.css">
+    <script src="/attack-animations.js" defer></script>
+    <script src="/attack-effects.js" defer></script>
+    <script src="/battle.js" defer></script>
+    <script src="/app.js" defer></script>
+</head>
+<body>
+    <div class="arena-shell">
+        <header class="game-header">
+            <p class="game-header__kicker">Proyecto Final · Combate por turnos</p>
+            <div class="game-header__status" aria-label="Progreso de selección">
+                <span class="game-header__round">Ronda de selección</span>
+                <span class="game-header__player" id="player-indicator">P1</span>
+            </div>
+        </header>
+
+        <main id="selection-screen" class="selection" aria-labelledby="selection-title">
+            <div class="selection__intro">
+                <p class="selection__eyebrow">Elige a tu combatiente</p>
+                <h1 id="selection-title">Selecciona tu personaje</h1>
+                <p id="selection-instructions">
+                    Jugador 1, elige una tarjeta y confirma para entrar a la arena.
+                </p>
+            </div>
+
+            <section
+                id="character-grid"
+                class="character-grid"
+                role="radiogroup"
+                aria-labelledby="selection-title"
+                aria-describedby="selection-instructions"
+            ></section>
+
+            <div class="selection__footer">
+                <p id="selection-status" class="selection__status" aria-live="polite">
+                    Ningún personaje seleccionado
+                </p>
+                <button id="confirm-button" class="confirm-button" type="button" disabled>
+                    <span>Confirmar selección</span>
+                    <span aria-hidden="true">→</span>
+                </button>
+            </div>
+        </main>
+
+        <main
+            id="battle-screen"
+            class="battle-screen"
+            aria-label="Arena de combate por turnos"
+            hidden
+        ></main>
+    </div>
+</body>
+</html>
