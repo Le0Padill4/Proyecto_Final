@@ -1,0 +1,8 @@
+datos.txt — Personajes del juego
+ Formato: nombre|hpmax|kimax|ataque|defensa|ki_especial|nataque|nataque_especial
+
+François|150| 150| 22 | 16|Deberes|Herencia
+Leo1|90|110|20|8| Crucigrama en clase | Profe soy Becado 
+Leo2|95|100|17| 11|Patada Llegar Tarde | Llegar temprano 
+Sexitar|120|80|18|20| Hacer deberes en clase  | Al Cesar lo que es del Cesar 
+
